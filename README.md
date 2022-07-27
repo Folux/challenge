@@ -1,4 +1,4 @@
-#Aim of this project
+# Aim of this project
 
 This project is reading from a Kafka stream of events that gets published to the `events` topic. Those messages are expected to be in a valid json format and to contain the field `uid` (the customer id) in the first level of their json tree.
 
@@ -6,14 +6,14 @@ The script in this project will read the json information from that `events` top
 
 
 ---
-#How to run it
+# How to run it
 
-##Requirements
+## Requirements
 
 * Docker
 * Scala SDK
 
-##Start Kafka environment
+## Start Kafka environment
 1. open a shell on the project root and navigate to folder `src/main/docker`
 2. run `docker-compose up -d` to initially download and start the **kafka environment**
 3. when it is there log into the `broker` container with `docker exec -it broker bash`
@@ -31,7 +31,7 @@ kafka-topics \
   --config "cleanup.policy=compact"
 ```
 
-##Set up Kafka job for the customer count
+## Set up Kafka job for the customer count
 1. open your IDE and import the project
 2. configure the **scala sdk**, if needed
 3. run the main method in the `CountEvents` object
