@@ -7,7 +7,7 @@ import org.apache.kafka.streams.scala.kstream.{Grouped, KStream, Produced}
 import org.apache.kafka.streams.scala.serialization.Serdes
 import org.apache.kafka.streams.scala.serialization.Serdes._
 import org.apache.kafka.streams.{KafkaStreams, StreamsConfig, Topology}
-import org.slf4j.{Logger, LoggerFactory}
+import org.slf4j.LoggerFactory
 
 import java.util.Properties
 
@@ -54,7 +54,6 @@ object CountEvents {
       // print out the results
       .map((k, v) => {
         logger.debug(s"events per customer -> key: $k, value: $v")
-        println(s"events per customer -> key: $k, value: $v")
         (k, v)
       })
       // TODO when consuming from new topic the messages don't show up - fix it
