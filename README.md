@@ -2,7 +2,7 @@
 
 This project is reading from a Kafka stream of events that gets published to the `events` topic. Those messages are expected to be in a valid json format and to contain the fields `uid` (the customer id as String) and `ts` (a UNIX timestamp) in the first level of their json tree.
 
-The script in this project will read the json information from that `events` topic and count the number unique customer ids (the `uid` field) per minute as defined in the event (the `ts` field). The resulting counts will then printed to the console and also published to a new topic called `user_count`. 
+The script in this project will read the json information from that `events` topic and count the number unique customer ids (the `uid` field) per minute as defined in the event (the `ts` field). The resulting counts will then be printed to the console and also published to a new topic called `user_count`. 
 
 
 ---
@@ -54,4 +54,4 @@ kafka-console-consumer \
 
 ## How this project can be continued in the future
 
-This project provides a very basic counting algorythim that only works on a single node. When there is a bigger amount of data being pushed to the incoming topic then it would be probably be better to use a more sophisticated solution that can handle parallel counting und multiple consumers in a cluster, that are polling from a bigger Kafka cluster with multiple brokers.
+This project provides a very basic counting algorithm that only works on a single node. When there is a bigger amount of data being pushed to the incoming topic then it would be probably be better to use a more sophisticated solution that can handle parallel counting und multiple consumers in a cluster, that are polling from a bigger Kafka cluster with multiple brokers.
