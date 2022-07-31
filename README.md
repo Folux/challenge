@@ -51,3 +51,7 @@ kafka-console-consumer \
   --property print.key=true \
   --property print.value=true
 ```
+
+## How this project can be continued in the future
+
+This project provides a very basic counting algorythim that only works on a single node. When there is a bigger amount of data being pushed to the incoming topic then it would be probably be better to use a more sophisticated solution that can handle parallel counting und multiple consumers in a cluster, that are polling from a bigger Kafka cluster with multiple brokers.
